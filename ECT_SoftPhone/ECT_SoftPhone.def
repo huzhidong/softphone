@@ -1,0 +1,9 @@
+; ECT_SoftPhone.def : Declares the module parameters.
+
+LIBRARY      "ECT_SOFTPHONE.OCX"
+
+EXPORTS
+	DllCanUnloadNow     @1 PRIVATE
+	DllGetClassObject   @2 PRIVATE
+	DllRegisterServer   @3 PRIVATE
+	DllUnregisterServer @4 PRIVATE

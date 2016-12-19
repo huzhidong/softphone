@@ -1,0 +1,33 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ECT_SoftPhone"=.\ECT_SoftPhone.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/软电话项目/3.编码阶段/3.2源码/ECT_SoftPhone", RCAAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

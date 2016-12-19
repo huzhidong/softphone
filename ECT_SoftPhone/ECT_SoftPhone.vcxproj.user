@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <DebuggerFlavor>WebBrowserDebugger</DebuggerFlavor>
+    <WebBrowserDebuggerHttpUrl>D:\ECT_SoftPhone\Release\Agent.htm</WebBrowserDebuggerHttpUrl>
+    <WebBrowserDebuggerDebuggerType>NativeOnly</WebBrowserDebuggerDebuggerType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <WebBrowserDebuggerHttpUrl>D:\ECT_SoftPhone\Debug\Agent.htm</WebBrowserDebuggerHttpUrl>
+    <WebBrowserDebuggerDebuggerType>NativeOnly</WebBrowserDebuggerDebuggerType>
+    <DebuggerFlavor>WebBrowserDebugger</DebuggerFlavor>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(TargetDir)\DLLS</LocalDebuggerEnvironment>
+    <LocalDebuggerCommand>C:\Program Files (x86)\Internet Explorer\iexplore.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>$(ProjectDir)Agent.htm</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+</Project>

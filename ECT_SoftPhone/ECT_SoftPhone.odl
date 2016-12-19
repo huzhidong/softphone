@@ -1,0 +1,133 @@
+// ECT_SoftPhone.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (ECT_SoftPhone.tlb) that will become a resource in
+// ECT_SoftPhone.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(BC7A45D6-6F22-4403-AB65-89A39CAE615C), version(1.0),
+  helpfile("ECT_SoftPhone.hlp"),
+  helpstring("ECT_SoftPhone ActiveX Control module"),
+  control ]
+library ECT_SOFTPHONELib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CECT_SoftPhoneCtrl
+
+	[ uuid(85D170CC-1FE9-41F3-9EEC-CEBF4443A5C9),
+	  helpstring("Dispatch interface for ECT_SoftPhone Control"), hidden ]
+	dispinterface _DECT_SoftPhone
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CECT_SoftPhoneCtrl)
+			[id(1)] long CTIServerType;
+			[id(2)] BSTR CTIServerIp;
+			[id(3)] long CTIServerPort;
+			[id(4)] BSTR PBX;
+			[id(5)] boolean WriteLogFlag;
+			[id(6)] long LogLevel;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CECT_SoftPhoneCtrl)
+			[id(7)] short  Login();
+			[id(8)] short  SetCTIParam(BSTR CTIServerIP, long CTIServerPort, long CTIServerType, BSTR PBX);
+			[id(9)] short  SetAgentParam(BSTR AgentID, BSTR Extension, BSTR AgentGroup, long LoginType);
+			[id(10)] short Logout();
+			[id(11)] short SetIdle();
+			[id(12)] short SetBusy( BSTR BusyReason);
+			[id(13)] short Answer();
+			[id(14)] short Hangup();
+			[id(15)] short Retrieve();
+			[id(16)] short Hold();
+			[id(17)] short MakeCall(BSTR PhoneNum);
+			[id(18)] short Reconnect();
+			[id(19)] short ConsultAgent(BSTR AgentID);
+			[id(20)] short Conference();
+			[id(21)] short Monitor(BSTR AgentID);
+			[id(22)] short Transfer(BSTR PhoneNum);
+			[id(23)] short TPIN(BSTR PhoneNum, BSTR Key, BSTR Value);
+			[id(24)] long  GetStatus();
+			[id(25)] short SetUserData(BSTR KV_Str);
+			[id(26)] BSTR  SetOneUserData(BSTR Key, BSTR Value);
+			[id(27)] BSTR  GetOneUserData(BSTR Key);
+			[id(28)] short SetAllAgentsParam(BSTR AllAgentStr);
+			[id(29)] short BlindTransfer(BSTR PhoneNum);
+			[id(30)] short QueryAgentStatus(BSTR AgentID);
+			[id(31)] short QueryCallStatus(BSTR AgentID);
+			[id(32)] short Bargein(BSTR AgentID);
+			[id(33)] short ForceBreak(BSTR AgentID);
+			[id(34)] short ForceLogout(BSTR AgentExtension);
+			[id(35)] short Run();
+			[id(36)] short SetCTIBackupParam(BSTR CTIServerIPBackup, long CTIServerPortBackup);
+      // add by hzd 2016-11-7 增加录音相关
+      [id(37)] short SetRECParam(BSTR RECServerIP, long RECServerPort, BSTR URLPath, BSTR CCID, BSTR UserName, BSTR PassWord);
+      [id(38)] BSTR  GetRECFile(BSTR CallUUID);
+      // add by hzd 2016-11-7 增加录音相关
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CECT_SoftPhoneCtrl
+
+	[ uuid(B9BFCEE8-098E-4283-8F7D-E3859EEE0426),
+	  helpstring("Event interface for ECT_SoftPhone Control") ]
+	dispinterface _DECT_SoftPhoneEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CECT_SoftPhoneCtrl)
+			[id(1)] void  LoginEvent(BSTR AgentID, BSTR AgentExtension);
+			[id(2)] void  LogoutEvent(BSTR AgentID, BSTR AgentExtension);
+			[id(3)] void  AgentReadyEvent(BSTR AgentID, BSTR AgentExtension);
+			[id(4)] void  AgentBusyEvent(BSTR AgentID, BSTR AgentExtension, BSTR BusyReason);
+			[id(5)] void  NewCallEvent(BSTR PhoneNum, long CallType);
+			[id(6)] void  HoldEvent();
+			[id(7)] void  RetrieveEvent();
+			[id(8)] void  HangupEvent();
+			[id(9)] void  EstablishedEvent(BSTR PhoneNum,long CallType);
+			[id(10)] void ACWEvent(BSTR PhoneNum);
+			[id(11)] void AfterTPINEvent(BSTR PhoneNum);
+			[id(12)] void CallAbandonEvent();
+			[id(13)] void MonitorCallEvent(BSTR BeMonitorAgentID,BSTR AgentID, BSTR AgentExtension,BSTR CallID,long CallType);
+			[id(14)] void ServiceEfficiencyEvent(BSTR AgentID, BSTR AgentGroup,BSTR CallID, BSTR ANI,BSTR DNIS, BSTR BeginTime, BSTR EndTime,long CallLength,BSTR RouteSource,BSTR RouteDestination);
+			[id(15)] void CheckPasswordEvent(BSTR reason);
+			[id(16)] void ErrorEvent(long ErrorCode, BSTR ErrorString);
+			[id(17)] void QueryAgentEvent(BSTR AgentID, BSTR AgentExtension,long AgentStatus);
+			[id(18)] void QueryCallEvent(BSTR AgentID,BSTR AgentExtension,long CallStatus);
+			[id(19)] void AgentStatusChangeEvent(long state);
+			[id(20)] void ConferenceEvent(BSTR PhoneNum,BSTR OtherExtension,long CallType);
+			[id(21)] void ConferenceEndEvent(BSTR PhoneNum,BSTR OtherExtension);
+			[id(22)] void CallTypeChangedEvent(BSTR PhoneNum,long CallType);
+			[id(23)] void DialingEvent(BSTR PhoneNum, long CallType);
+			[id(24)] void RecordEvent(BSTR ip, long port, BSTR recordID);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CECT_SoftPhoneCtrl
+
+	[ uuid(77DD447B-0336-4EF5-9BB2-EFD17123B3A3),
+	  helpstring("ECT_SoftPhone Control"), control ]
+	coclass ECT_SoftPhone
+	{
+		[default] dispinterface _DECT_SoftPhone;
+		[default, source] dispinterface _DECT_SoftPhoneEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

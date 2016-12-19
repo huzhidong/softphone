@@ -1,0 +1,353 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""ECT_SoftPhone.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,5,3,0
+ PRODUCTVERSION 1,5,3,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x29L
+#else
+ FILEFLAGS 0x28L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "新晨科技股份有限公司"
+            VALUE "FileDescription", "ECT_SoftPhone ActiveX Control Module"
+            VALUE "FileVersion", "1.5.3.0"
+            VALUE "InternalName", "ECT_SoftPhone"
+            VALUE "LegalCopyright", "Copyright (C) 2016 版权所有"
+            VALUE "LegalTrademarks", "ECT_SoftPhone"
+            VALUE "OriginalFilename", "ECT_SoftPhone.OCX"
+            VALUE "PrivateBuild", "Build 20161207"
+            VALUE "ProductName", "ECT_SoftPhone ActiveX Control Module"
+            VALUE "ProductVersion", "1.5.3.0"
+            VALUE "SpecialBuild", "Build 20161207"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON                    "ECT_SoftPhone.ico"
+IDI_ICON_LOGO           ICON                    "res\\logo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ECT_SOFTPHONE       BITMAP                  "ECT_SoftPhoneCtl.bmp"
+IDB_ANSWER              BITMAP                  "res\\answer.bmp"
+IDB_BACKGND             BITMAP                  "res\\BACK1.bmp"
+IDB_BARGEIN             BITMAP                  "res\\bargein.bmp"
+IDB_CONSULT             BITMAP                  "res\\consult.bmp"
+IDB_DIAL                BITMAP                  "res\\Dial.bmp"
+IDB_FORCEBREAK          BITMAP                  "res\\forcebreak.bmp"
+IDB_HOLD                BITMAP                  "res\\hold.bmp"
+IDB_LISTEN              BITMAP                  "res\\listen.bmp"
+IDB_LOGIN               BITMAP                  "res\\login.bmp"
+IDB_READY               BITMAP                  "res\\ready.bmp"
+IDB_RECONNECT           BITMAP                  "res\\reconnect.bmp"
+IDB_TRANSFER            BITMAP                  "res\\transfer.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_ECT_SOFTPHONE DIALOGEX 34, 22, 306, 56
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ECT_SoftPhone Control"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDI_ICON_LOGO,IDC_STATIC,10,10,20,20
+    LTEXT           "ECT_SoftPhone Control, Version 1.5.3.0,Build 20161207",IDC_STATIC,40,10,222,8
+    LTEXT           "Copyright (C) 2016, Brilliance",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,267,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_ECT_SOFTPHONE DIALOG 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of ECT_SoftPhone Control on this dialog.",IDC_STATIC,7,25,229,16
+END
+
+IDD_AGENTFORM_DIALOG DIALOGEX 0, 0, 303, 35
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 9, "Arial", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "签入",IDC_LOGIN,0,0,24,24,BS_TOP
+    PUSHBUTTON      "咨询",IDC_CONSULT,144,0,24,24,BS_TOP
+    PUSHBUTTON      "拨号",IDC_DIAL,96,0,24,24,BS_TOP
+    PUSHBUTTON      "转接",IDC_TRANSFER,120,0,24,24,BS_TOP
+    PUSHBUTTON      "保持",IDC_HOLD,72,0,24,24,BS_TOP
+    PUSHBUTTON      "置忙",IDC_SETBUSY,24,0,24,24,BS_TOP
+    PUSHBUTTON      "取回",IDC_RECONNECT,168,0,24,24,BS_TOP
+    PUSHBUTTON      "监听",IDC_LISTEN,241,0,24,24,BS_TOP | NOT WS_VISIBLE
+    PUSHBUTTON      "摘机",IDC_ANSWER,48,0,24,24,BS_TOP
+    PUSHBUTTON      "强插",IDC_BARGEIN,260,0,24,24,BS_TOP | NOT WS_VISIBLE
+    PUSHBUTTON      "强拆",IDC_FORCEBREAK,278,0,24,24,BS_TOP | NOT WS_VISIBLE
+    LTEXT           "工号:",IDC_STATIC,4,24,16,8
+    LTEXT           "",IDC_TEXT_AGENTID,20,24,28,9,SS_CENTERIMAGE
+    LTEXT           "分机:",IDC_STATIC,47,24,17,8
+    LTEXT           "",IDC_TEXT_EXTENSION,62,24,28,9,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "状态:",IDC_STATIC,89,24,17,8
+    LTEXT           "未登录",IDC_TEXT_STATUS,106,24,30,9,SS_CENTERIMAGE
+    LTEXT           "时长:",IDC_STATIC,139,24,18,8
+    LTEXT           "通话号码:",IDC_STATIC,193,24,31,8
+    LTEXT           "",IDC_TIME,158,24,34,9,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_DIALNUM,224,24,54,9,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    PUSHBUTTON      "预忙",IDC_SETBYSYTYPE,208,0,24,24,BS_TOP
+END
+
+IDD_DIALOG_DIAL DIALOGEX 0, 0, 267, 31
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "拨号"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,202,9,41,14
+    EDITTEXT        IDC_NUM,45,9,90,14,ES_NUMBER
+    LTEXT           "目标号码:",IDC_STATIC,9,12,36,8
+    CONTROL         "List1",IDC_AGENT_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,135,8,118,6
+    PUSHBUTTON      "呼出",IDC_NUMDIAL,148,9,41,14
+    CONTROL         "List1",IDC_GROUP_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,9,8,118,6
+END
+
+IDD_DIALOG_TRANSFER DIALOGEX 0, 0, 241, 32
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "转接"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    LTEXT           "目标号码:",IDC_STATIC,7,13,36,8
+    EDITTEXT        IDC_NUM,46,10,68,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "取消",IDCANCEL,185,10,36,14
+    PUSHBUTTON      "转座席",IDC_TRANSAGENT,128,10,43,14
+    PUSHBUTTON      "转组",IDC_TRANSGROUP,154,10,36,14,NOT WS_VISIBLE
+    CONTROL         "List2",IDC_GROUP_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,9,7,110,6
+    CONTROL         "List2",IDC_AGENT_LIST,"SysListView32",LVS_REPORT | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,124,7,110,6
+END
+
+IDD_DIALOG_CONSULT DIALOGEX 0, 0, 213, 31
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "咨询"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,167,10,33,14
+    LTEXT           "目标号码:",IDC_STATIC,13,12,38,8
+    EDITTEXT        IDC_NUM,52,10,58,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "咨询",IDC_CONSULTAGENT,122,10,33,14
+    CONTROL         "List2",IDC_GROUP_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,9,7,93,6
+    CONTROL         "List2",IDC_AGENT_LIST,"SysListView32",LVS_REPORT | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,109,7,93,6
+END
+
+IDD_DIALOG_SETBUSYREASON DIALOG 0, 0, 153, 123
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "置忙设置"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_BUSYREASON,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,8,7,137,88
+    PUSHBUTTON      "取消",IDCANCEL,122,100,24,14
+    LTEXT           "置忙原因:",IDC_STATIC,9,102,35,8
+    EDITTEXT        IDC_REASON,45,100,40,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "确定",IDC_OK,90,100,24,14
+END
+
+IDD_DIALOG_LISTEN DIALOGEX 0, 0, 243, 30
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "监听"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,177,9,37,14
+    PUSHBUTTON      "监听",IDC_LISTEN,95,9,37,14
+    LTEXT           "目标号码:",IDC_STATIC,7,11,36,8
+    EDITTEXT        IDC_NUM,45,8,42,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "List1",IDC_GROUP_LIST,"SysListView32",LVS_REPORT | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,7,7,108,6
+    CONTROL         "List1",IDC_AGENT_LIST,"SysListView32",LVS_REPORT | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,128,7,108,6
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX_ECT_SOFTPHONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_PROPPAGE_ECT_SOFTPHONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_AGENTFORM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 300
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 33
+    END
+
+    IDD_DIALOG_DIAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 9
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 24
+    END
+
+    IDD_DIALOG_TRANSFER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 24
+    END
+
+    IDD_DIALOG_CONSULT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 24
+    END
+
+    IDD_DIALOG_SETBUSYREASON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 116
+    END
+
+    IDD_DIALOG_LISTEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 23
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    VK_RETURN,      IDC_OK,                 VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ECT_SOFTPHONE       "ECT_SoftPhone Control"
+    IDS_ECT_SOFTPHONE_PPG   "ECT_SoftPhone Property Page"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ECT_SOFTPHONE_PPG_CAPTION "General"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "ECT_SoftPhone.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

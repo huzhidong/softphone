@@ -1,0 +1,485 @@
+<HTML>
+<HEAD>
+	<TITLE>软电话测试页面</TITLE>
+</HEAD>
+<BODY onLoad="load()" onUnload="unload()">
+	
+<SCRIPT type="text/javascript">
+	
+function load()
+{
+    v1 =document.getElementsByName("AgentID");
+    var AgentID = v1[0].value ;
+    v2 = document.getElementsByName("Extension");
+    var Extension = v2[0].value;
+    v3 = document.getElementsByName("Group");
+	var AgentGroup = v3[0].value;
+	v4 = document.getElementsByName("LoginType");
+	var LoginType = v4[0].value;
+	if(v4[0].checked)
+		LoginType = v4[0].value;
+	else if(v4[1].checked)
+		LoginType = v4[1].value;
+	else if(v4[2].checked)
+		LoginType = v4[2].value;
+
+	SoftPhone.SetAllAgentsParam("20080428011659,客服班长,9190,魏燕华,P_monitor_1,89303|20080428011629,客服班长,8003,王涵,P_monitor_1,89303|20080428011659,客服班长,8004,张翼虎,P_monitor_1,89303|20080428011659,储蓄普通座席,1001,魏燕华,P_agent_1,89303|20080428011659,储蓄普通座席,1002,王涵,P_agent_1,89303|20080428011659,储蓄普通座席,1003,王楠,P_agent_1,89303|20080428011659,储蓄普通座席,1004,腾建华,P_agent_1,89303|20080428011659,储蓄普通座席,1006,王凌,P_agent_1,89303|20080428011659,储蓄普通座席,1007,于美玲,P_agent_1,89303|20080428011659,储蓄专家座席,5001,李飞,P_expert_1,89303|20080428011655,信用卡持卡座席,7031,王涵,C_agent_1,89308|20080428711655,信用卡持卡座席,7032,李强,C_agent_1,89308");
+	SoftPhone.SetAgentParam(AgentID, Extension, AgentGroup, LoginType);
+
+	SoftPhone.SetCTIBackupParam("192.168.30.16",3000);  //10.229.23.115 :3000
+	SoftPhone.SetRECParam("172.32.5.169",8080,"/api/v2/ops/contact-centers/","0fc5a656-6737-485c-96f3-1ab43411d4ac","ops","ops");
+	SoftPhone.Run();
+}
+
+function unload()
+{	
+	SoftPhone.Logout();
+}
+
+
+
+function Login()
+{
+    v1 =document.getElementsByName("AgentID");
+    var AgentID = v1[0].value ;
+    v2 = document.getElementsByName("Extension");
+    var Extension = v2[0].value;
+    v3 = document.getElementsByName("Group");
+	var AgentGroup = v3[0].value;
+	v4 = document.getElementsByName("LoginType");
+	var LoginType = v4[0].value;
+	if(v4[0].checked)
+		LoginType = v4[0].value;
+	else if(v4[1].checked)
+		LoginType = v4[1].value;
+	else if(v4[2].checked)
+		LoginType = v4[2].value;
+	
+	SoftPhone.SetAllAgentsParam("20080428011659,客服班长,9190,魏燕华,P_monitor_1,89303|20080428011629,客服班长,8003,王涵,P_monitor_1,89303|20080428011659,客服班长,8004,张翼虎,P_monitor_1,89303|20080428011659,储蓄普通座席,1001,魏燕华,P_agent_1,89303|20080428011659,储蓄普通座席,1002,王涵,P_agent_1,89303|20080428011659,储蓄普通座席,1003,王楠,P_agent_1,89303|20080428011659,储蓄普通座席,1004,腾建华,P_agent_1,89303|20080428011659,储蓄普通座席,1006,王凌,P_agent_1,89303|20080428011659,储蓄普通座席,1007,于美玲,P_agent_1,89303|20080428011659,信用卡持卡座席,7031,李飞,C_agent_1,89308|20080428711655,信用卡持卡座席,7032,李强,C_agent_1,89308");
+	SoftPhone.SetAgentParam(AgentID, Extension, AgentGroup, LoginType);
+
+	SoftPhone.Login();
+}
+
+function Logout()
+{
+	SoftPhone.Logout();
+}
+
+function SetIdle()
+{
+	SoftPhone.SetIdle();
+}
+
+function SetBusy()
+{	
+	SoftPhone.SetBusy("置忙");
+}
+
+function Answer()
+{
+	SoftPhone.Answer();
+}
+
+function Hold()
+{
+	SoftPhone.Hold();
+}
+ 
+ 
+function Retrieve()
+{
+	SoftPhone.Retrieve();
+}	
+
+function Reconnect()
+{
+	SoftPhone.Reconnect();
+}
+
+function Dialout()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.MakeCall(destno);
+}
+
+function Release()
+{
+	SoftPhone.Hangup();
+}	
+
+function Consult()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.ConsultAgent(destno);
+}
+
+function Transfer()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.Transfer(destno);
+}
+
+function TransferIVR()
+{
+	//SoftPhone.SetOneUserData("TranType", "1");
+	SoftPhone.SetOneUserData("userdata","VAR1:01QTA2NG5GC0D8DCL42I1B5AES00008S|VAR2:11|VAR3:500004|VAR4:|VAR5:32C|VAR6:|VAR7:|VAR8:|VAR9:|VAR10:|VAR11:11000000|VAR12:|VAR13:|VAR14:|VAR15:|VAR16:|VAR17:M0049 |VAR18:|VAR19:|VAR20:|VAR21:|VAR22:|VAR23:|VAR24:|VAR25:|VAR26:|VAR27:|VAR28:|VAR29:0|VAR38:Enter Value|VAR39:|VAR40:|VAR41:|VAR42:|VAR43:|VAR46:|VAR50:|VAR100:");
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+//	SoftPhone.Transfer(destno);
+	SoftPhone.BlindTransfer(destno);
+}
+
+function TransGroup()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.BlindTransfer(destno);		
+}
+
+function Conference()
+{
+	SoftPhone.Conference();
+}
+
+function Listen()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.Monitor(destno);
+}
+
+function Bargein()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.Bargein(destno);
+}
+
+function ForceBreak()
+{
+	v4 = document.getElementsByName("destno");
+	var destno = v4[0].value;
+	SoftPhone.ForceBreak(destno);
+}
+
+function ForceLogout()
+{
+	v1 = document.getElementsByName("extinuse");
+	var agentdn = v1[0].value;
+	SoftPhone.ForceLogout(agentdn);
+}
+
+
+function Tpin()
+{
+	//SoftPhone.TPIN("9005","VAR2,11|VAR11,10000000");
+	//SoftPhone.SetOneUserDate("TranTpye","0");
+	SoftPhone.TPIN("60002","TransferData","VAR1:01QTA2NG5GC0D8DCL42I1B5AES00008S|VAR2:11|VAR3:500004|VAR4:|VAR5:32C|VAR6:|VAR7:|VAR8:|VAR9:|VAR10:|VAR11:12000000|VAR12:|VAR13:|VAR14:|VAR15:|VAR16:|VAR17:M0049 |VAR18:|VAR19:|VAR20:|VAR21:|VAR22:|VAR23:|VAR24:|VAR25:|VAR26:|VAR27:|VAR28:|VAR29:0|VAR38:Enter Value|VAR39:|VAR40:|VAR41:|VAR42:|VAR43:|VAR46:|VAR50:|VAR100:");
+	
+	//SoftPhone.TPIN("89202","VAR2,11|VAR11,10000000");
+}
+
+function GetRecFile()
+{
+	var key = "CallUUID";
+	v1 = document.getElementsByName("dataValue");
+	v2 = document.getElementsByName("recfile");
+  //v2[0].value = "";
+  	var calluuid = v1[0].value;
+	//var calluuid = SoftPhone.GetOneUserData(key);
+	var rcvfile = SoftPhone.GetRECFile(v1[0].value);
+	v2[0].value = rcvfile;
+
+}
+
+function QueryAgent()
+{
+	v1 = document.getElementsByName("destAgentID");
+	var agentid = v1[0].value;
+
+	SoftPhone.QueryAgentStatus(agentid);
+}
+
+function QueryCall()
+{
+	v1 = document.getElementsByName("destAgentID");
+	var agentid = v1[0].value;
+
+	SoftPhone.QueryCallStatus(agentid);
+}
+
+function SetUserData()
+{
+	v1 = document.getElementsByName("dataKey");
+	v2 = document.getElementsByName("dataValue");
+	var key = v1[0].value;
+	var val = v2[0].value;
+	SoftPhone.SetOneUserData(key,val);
+}
+
+function GetUserData()
+{
+	v1 = document.getElementsByName("dataKey");
+	v2 = document.getElementsByName("dataValue");
+	var key = v1[0].value;
+
+	v2[0].value = SoftPhone.GetOneUserData(key);
+}
+
+function ShowMsg(msg)
+{
+	v1 = document.getElementsByName("result");
+	v1[0].value = msg;
+	
+	v2 = document.getElementsByName("statement");
+	oldmsg = v2[0].value;
+	v2[0].value = msg + "\r\n" + oldmsg;
+}
+
+function Clear()
+{
+	v2 = document.getElementsByName("statement");
+	v2[0].value = "";
+}
+
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="LoginEvent(AgentID, AgentExtension)">
+	ShowMsg("座席签入成功! AgentID:" + AgentID + " Extension:" + AgentExtension);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="LogoutEvent(AgentID, AgentExtension)">
+	ShowMsg("座席签出");
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="AgentReadyEvent(AgentID, AgentExtension)">
+	ShowMsg("座席就绪");
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="AgentBusyEvent(AgentID, AgentExtension, BusyReason)">
+	ShowMsg("座席置忙, 原因：" + BusyReason);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="NewCallEvent(PhoneNum, CallType)">
+	ShowMsg("新呼叫：号码:"+PhoneNum + " 呼叫类型：" + CallType);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="DialingEvent(PhoneNum, CallType)">
+	ShowMsg("外拨呼叫：号码:"+PhoneNum + " 呼叫类型：" + CallType);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="HoldEvent()">
+	ShowMsg("通话保持");
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="RetrieveEvent()">
+	ShowMsg("通话恢复");
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="HangupEvent()">
+	ShowMsg("挂机成功");
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="EstablishedEvent(PhoneNum,CallType)">
+	ShowMsg("通话建立, " + PhoneNum +", CallType:" + CallType);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="ConferenceEvent(PhoneNum,OtherExtension,CallType)">
+	ShowMsg("会议建立成功， 另一方分机：" + OtherExtension);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="ConferenceEndEvent(PhoneNum,OtherExtension)">
+	ShowMsg("会议结束， 另一方分机：" + OtherExtension);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="ACWEvent(PhoneNum)">
+	ShowMsg("话后处理：" + PhoneNum);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="AfterTPINEvent(PhoneNum)">
+	ShowMsg("TPIN完成, PhoneNum:"+ PhoneNum);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="CallAbandonEvent()">
+	ShowMsg("呼叫放弃");
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="MonitorCallEvent(BeMonitorAgentID,AgentID, AgentExtension,CallID,CallType)">
+	ShowMsg("监听成功 " +BeMonitorAgentID+" "+AgentID+" "+AgentExtension+" "+CallID+" "+CallType);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" FOR="SoftPhone" EVENT="ServiceEfficiencyEvent(AgentID, AgentGroup,CallID, ANI,DNIS, BeginTime, EndTime, CallLength,RouteSource,RouteDestination)"> 
+	ShowMsg("服务效率" + " "+AgentID+" "+AgentGroup+" "+ CallID+" "+ ANI+" "+DNIS+" "+ BeginTime+" "+EndTime+" "+ CallLength + " " +RouteSource + " " + RouteDestination);
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" >
+function showCheckUserDialog() {
+	var dialogHeight=240;
+	var dialogWidth=380;
+	var xx = 322;
+	var yy = 264;	
+	var success = window.showModalDialog("CheckUserPwd.htm", "","status:no;resizable:no;help:no;dialogHeight:"+dialogHeight+"px;dialogWidth:"+dialogWidth+"px;dialogLeft:"+xx+";dialogTop:"+yy+";");		
+	if(!success) {
+		alert("未通过密码验证，请再尝试");
+	}
+	return success;	
+//	return 1;
+}
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" FOR="SoftPhone" EVENT="CheckPasswordEvent(state)"> 
+    //输入密码类型事件
+
+ 	if(state=="login"){	   
+ 		//弹出对话框，进行验证密码
+ 		if(showCheckUserDialog()){
+	 		//验证成功后
+	 		SoftPhone.Login(); 	
+ 		}
+
+ 	}else if(state=="logout"){
+ 		//弹出对话框，进行验证密码
+ 		if(showCheckUserDialog()){
+	 		//验证成功后
+	 		SoftPhone.Logout(); 		
+ 		}
+
+ 	}else if(state=="ready"){
+ 		//弹出对话框，进行验证密码
+ 		if(showCheckUserDialog()){
+	 		//验证成功后
+	 		SoftPhone.SetIdle(); 		
+ 		} 		
+ 	}
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" FOR="SoftPhone" EVENT="AgentStatusChangeEvent(AgentStatus)"> 
+	ShowMsg("座席状态变化为："+AgentStatus);
+</SCRIPT>	
+
+<SCRIPT LANGUAGE="javascript" FOR="SoftPhone" EVENT="CallTypeChangedEvent(PhoneNum,CallType)"> 
+	ShowMsg("呼叫类型变化为："+CallType);
+</SCRIPT>	
+
+<SCRIPT LANGUAGE="javascript" FOR="SoftPhone" EVENT="QueryAgentEvent(AgentID,AgentExtension,AgentStatus)"> 
+AgentExtension,
+	v1 = document.getElementsByName("queryresult");
+	v2 = document.getElementsByName("extinuse");
+	v2[0].value = AgentExtension;
+	
+	if(AgentStatus ==4)
+		v1[0].value = "空闲";
+	else if (AgentStatus ==3)
+		v1[0].value = "置忙";
+	else if (AgentStatus ==14)
+		v1[0].value = "话后处理";	
+	else if (AgentStatus ==-1)
+	{
+		v1[0].value = "未登录";	
+		v2[0].value = "";
+	}	
+		
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" FOR="SoftPhone" EVENT="QueryCallEvent(AgentID,AgentExtension,CallStatus)"> 
+	v1 = document.getElementsByName("queryresult");
+	v2 = document.getElementsByName("extinuse");
+	v2[0].value = AgentExtension;
+	if(CallStatus ==0)
+		v1[0].value = "无通话";
+	else if (CallStatus ==6)
+		v1[0].value = "有通话";
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" For="SoftPhone" EVENT="ErrorEvent(ErrorCode,ErrorString)">
+	ShowMsg("系统出错！code [" + ErrorCode + "], \"" + ErrorString + "\"");
+</SCRIPT>
+
+<strong><font color="Green" size="4">软电话控件界面</font></strong><br/>
+<OBJECT ID="SoftPhone" WIDTH=508 HEIGHT=60
+ CLASSID="CLSID:77DD447B-0336-4EF5-9BB2-EFD17123B3A3" codebase="http://10.229.23.115:7004/agent/ECT_SoftPhone.cab" VERSION="1.4.0.1">
+    <PARAM NAME="CTIServerIp" value="172.32.5.169">    //192.168.30.16    10.229.23.115
+    <PARAM NAME="CTIServerPort" value="3000">
+    <PARAM NAME="CTIServerType" value="GENESYS">
+    <PARAM NAME="BusyReason" value="1,小休|2,会议|3,培训">
+    <PARAM NAME="PBX" value="ALCATEL">
+    <PARAM NAME="OpenLog" value="TRUE"
+    <PARAM NAME="LogLevel" value="3">
+    <PARAM NAME="CheckPassword" value="FALSE"> 
+ <font color="RED" size="3">控件不能显示，请检查IE的安全设置，检查控件OCX是否以管理员身份注册成功或相关的DLL是否放置到/SYSTEM32目录下!!</font>
+</OBJECT>
+<form method="POST" name="login">
+
+<P>
+<strong><font color="Green" size="4">登录信息</font></strong><br/>
+工号:<input type="text" name="AgentID" size="10" value="800003">
+DN(分机)号:<input type="text" name="Extension" size="10" value="500013" size="15">
+组号:<input type="text" name="Group" size="10" value="60002" size="15">  &nbsp
+登录类型:<input type="radio" value="0" name="LoginType" checked> 普通座席 <input type="radio" name="LoginType" value="1">班长
+<hr>
+<strong><font color="Green" size="4">座席功能测试</font></strong><br/>
+	<input type="button" name="Submit" onClick="Login()" value="签入">
+	<input type="button" name="Submit" onClick="Logout()" value="签出">
+	<input type="button" name="Submit" onClick="SetIdle()" value="置闲">
+	<input type="button" name="Submit" onClick="SetBusy()" value="置忙">
+<hr>
+<strong><font color="Green" size="4">电话功能测试</font></strong>
+
+目标号码:<input type="text" name="destno" value="500012" size="15">	
+<br/>
+<br/>
+	<input type="button" name="Submit" onClick="Answer()" value="摘机">
+	<input type="button" name="Submit" onClick="Hold()" value="保持">
+	<input type="button" name="Submit" onClick="Retrieve()" value="恢复">	
+	<input type="button" name="Submit" onClick="Release()" value="挂机">
+	<input type="button" name="Submit" onClick="Reconnect()" value="取回">	
+	<input type="button" name="Submit" onClick="Dialout()" value="呼出">    
+	<input type="button" name="Submit" onClick="Consult()" value="咨询">
+	<input type="button" name="Submit" onClick="Transfer()" value="转接">
+	<input type="button" name="Submit" onClick="Conference()" value="会议"> &nbsp
+	
+	<input type="button" name="Submit" onClick="TransferIVR()" value="转IVR">
+	<input type="button" name="Submit" onClick="TransGroup()" value="转组">
+	<input type="button" name="Submit" onClick="Tpin()" value="转TPIN"> &nbsp
+	
+	<input type="button" name="Submit" onClick="Listen()" value="监听">
+	<input type="button" name="Submit" onClick="Bargein()" value="强插">
+	<input type="button" name="Submit" onClick="ForceBreak()" value="强拆">
+
+<br/>
+<hr>
+<strong><font color="Green" size="4">随路数据测试</font></strong><br/><br/>
+Key:<input type="text" name="dataKey" value="">	Value:<input type="text" name="dataValue" value="">
+ &nbsp
+<input type="button" name="Submit"  onClick="SetUserData()" value="设置随路数据">
+<input type="button" name="Submit"  onClick="GetUserData()" value="获取随路数据">
+<hr>
+<strong><font color="Green" size="4">其他座席测试</font></strong><br/>
+目标工号:<input type="text" name="destAgentID" value="" size="10"> 
+状态结果:<input type="text" name="queryresult" value="" readonly="true" size="10">
+使用分机:<input type="text" name="extinuse" value="" readonly="true" size="10">
+ &nbsp
+
+<input type="button" name="Submit" onClick="QueryAgent()" value="查询座席状态"> 
+<input type="button" name="Submit" onClick="QueryCall()" value="查询通话状态">  
+<input type="button" name="Submit" onClick="ForceLogout()" value="强制签出">
+
+<hr>
+
+<strong><font color="BROWN">录音文件信息：</font></strong>
+Value:<input type="text" name="recfile" value="" color="red" size="60">
+<input type="button" name="Submit" onClick="GetRecFile()" value="获取录音文件">
+
+<hr>
+<strong><font color="BROWN">当前状态信息：</font></strong><input type="text" name="result" value="" color="red" size="60">
+
+<strong><font color="Green">事件信息总汇：</font></strong><input type="button" name="Submit" onClick="Clear()" value="清除"><br/>
+<textarea name="statement" cols="80" rows="10" readonly="readonly" height="200" ></textarea>
+
+</form>
+</BODY>
+</HTML>
